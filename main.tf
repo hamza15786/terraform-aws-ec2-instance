@@ -105,11 +105,6 @@ resource "aws_security_group" "test_sg" {
 }
 
 
-# Define SSH key pair for our instances
-#resource "aws_key_pair" "default" {
-#  key_name = "testkeypair"
-#  public_key = file(var.key_path)
-#}
 
 #Define instance for our web server
 resource "aws_instance" "test_instance" {
@@ -118,26 +113,10 @@ resource "aws_instance" "test_instance" {
   subnet_id = aws_subnet.test_subnet.id
   associate_public_ip_address = true
    vpc_security_group_ids = [aws_security_group.test_sg.id]
- # key_name = aws_key_pair.default.id
   
 
  
 
- # provisioner "remote-exec" {
-  #inline = [
-  # "sudo yum update -y",
-   #  "sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2",
-  #  "sudo yum install -y httpd",
-   # "sudo systemctl start httpd"
-  #  ]
-#}
-  #  connection {
-
-   #//   type= "ssh"
-   #//   password=""
-   # //  private_key = file("~/.ssh/id_rsa")
- # //    host= self.public_ip
-#//    }
   
   
 
