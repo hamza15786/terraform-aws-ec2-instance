@@ -106,10 +106,10 @@ resource "aws_security_group" "test_sg" {
 
 
 # Define SSH key pair for our instances
-resource "aws_key_pair" "default" {
-  key_name = "testkeypair"
-  public_key = file(var.key_path)
-}
+#resource "aws_key_pair" "default" {
+#  key_name = "testkeypair"
+#  public_key = file(var.key_path)
+#}
 
 #Define instance for our web server
 resource "aws_instance" "test_instance" {
