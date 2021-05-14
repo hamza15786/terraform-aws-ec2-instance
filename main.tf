@@ -118,26 +118,26 @@ resource "aws_instance" "test_instance" {
   subnet_id = aws_subnet.test_subnet.id
   associate_public_ip_address = true
    vpc_security_group_ids = [aws_security_group.test_sg.id]
-  key_name = aws_key_pair.default.id
+ # key_name = aws_key_pair.default.id
   
 
  
 
- // provisioner "remote-exec" {
-    //inline = [
-     // "sudo yum update -y",
-    //  "sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2",
-   //   "sudo yum install -y httpd",
-    //  "sudo systemctl start httpd"
-  //  ]
-// }
-  //  connection {
+ # provisioner "remote-exec" {
+  #inline = [
+  # "sudo yum update -y",
+   #  "sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2",
+  #  "sudo yum install -y httpd",
+   # "sudo systemctl start httpd"
+  #  ]
+#}
+  #  connection {
 
-   //   type= "ssh"
-   //   password=""
-    //  private_key = file("~/.ssh/id_rsa")
-  //    host= self.public_ip
-//    }
+   #//   type= "ssh"
+   #//   password=""
+   # //  private_key = file("~/.ssh/id_rsa")
+ # //    host= self.public_ip
+#//    }
   
   
 
