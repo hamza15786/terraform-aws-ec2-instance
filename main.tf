@@ -109,7 +109,7 @@ resource "aws_security_group" "test_sg" {
 #Define instance for our web server
 resource "aws_instance" "test_instance" {
   ami           = var.ami
-  instance_type = "t2.micro"
+  instance_type = var.instance_type
   subnet_id = aws_subnet.test_subnet.id
   associate_public_ip_address = true
    vpc_security_group_ids = [aws_security_group.test_sg.id]
